@@ -1,6 +1,3 @@
-// jeromeetienne / virtualjoystick.js
-
-
 var VirtualJoystick	= function(opts)
 {
 	opts			= opts			|| {};
@@ -223,13 +220,13 @@ VirtualJoystick.prototype._buildJoystickBase	= function()
 	
 	var ctx		= canvas.getContext('2d');
 	ctx.beginPath(); 
-	ctx.strokeStyle = "black"; 
+	ctx.strokeStyle = "grey"; 
 	ctx.lineWidth	= 6; 
 	ctx.arc( canvas.width/2, canvas.width/2, 40, 0, Math.PI*2, true); 
 	ctx.stroke();	
 
 	ctx.beginPath(); 
-	ctx.strokeStyle	= "black"; 
+	ctx.strokeStyle	= "grey"; 
 	ctx.lineWidth	= 2; 
 	ctx.arc( canvas.width/2, canvas.width/2, 60, 0, Math.PI*2, true); 
 	ctx.stroke();
@@ -244,7 +241,7 @@ VirtualJoystick.prototype._buildJoystickStick	= function()
 	canvas.height	= 86;
 	var ctx		= canvas.getContext('2d');
 	ctx.beginPath(); 
-	ctx.strokeStyle	= "grey"; 
+	ctx.strokeStyle	= "white"; 
 	ctx.lineWidth	= 6; 
 	ctx.arc( canvas.width/2, canvas.width/2, 40, 0, Math.PI*2, true); 
 	ctx.stroke();

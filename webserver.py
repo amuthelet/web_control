@@ -17,8 +17,6 @@ class VirtualJoystickData():
         self.deltaX = 0
         self.deltaY = 0
 
-
-
 class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
     """
     HTTP handler performing custom GET and POST management
@@ -33,8 +31,9 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
     def do_GET(self):
         parsed_path = urlparse.urlparse(self.path)
 
-        if parsed_path.geturl() == '/value':
-            self.wfile.write(self.joystick_data.deltaX)
+        if parsed_path.geturl() == '/get_joystick_value':
+            value = self.joystick_data.deltaX + ',' + self.joystick_data.deltaY 
+            self.wfile.write(value)
         else:
             f = open('.' + parsed_path.geturl())
             self.send_response(200)
