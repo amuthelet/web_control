@@ -7,9 +7,9 @@
         <style>
             body {
             overflow : hidden;
-            padding : 10;
+            padding : 0;
             margin : 0;
-            background-color: #BBB;
+            background-color: black;
             }
             #info {
             position : absolute;
@@ -27,21 +27,167 @@
             }
             #container {
             width : 100%;
-            height : 100%;
+            height : 50%;
             overflow : hidden;
             padding : 0;
             margin : 0;
             -webkit-user-select : none;
             -moz-user-select : none;
             }
+
+            .buttonEnvWhite
+            {
+              position:relative;
+              background-image:url(images/studio_panel2.jpg);
+              border:none;
+              width:256px;
+              height:128px;
+              color:grey;
+            }
+            .buttonEnvWhite:hover
+            {
+              background-image:url(images/studio_panel2.jpg);
+            }
+            .buttonEnvWhite:active
+            {
+              top: 0.1%;
+              left:0.1%; 
+            }
+
+            .buttonEnvWarehouse
+            {
+              position:relative;
+              background-image:url(images/interior_hall3.jpg);
+              border:none;
+              width:256px;
+              height:128px;
+              color:grey;
+            }
+            .buttonEnvWarehouse:hover
+            {
+              background-image:url(images/interior_hall3.jpg);
+            }
+            .buttonEnvWarehouse:active
+            {
+              top: 0.1%;
+              left:0.1%; 
+            }      
+
+
+            .buttonEnvDealership
+            {
+              position:relative;
+              background-image:url(images/dealership.jpg);
+              border:none;
+              width:256px;
+              height:128px;
+              color:grey;
+            }
+            .buttonEnvDealership:hover
+            {
+              background-image:url(images/dealership.jpg);
+            }
+            .buttonEnvDealership:active
+            {
+              top: 0.1%;
+              left:0.1%; 
+            }                    
+
+            .buttonEnvBar
+            {
+              padding:1%;
+              margin:0.2%;
+            }            
+
+            .buttonColorWhite
+            {
+              position:relative;
+              background-image:url(images/carpaint_white.jpg);
+              border:none;
+              width:107px;
+              height:105px;
+              color:grey;
+            }
+            .buttonColorWhite:hover
+            {
+              background-image:url(images/carpaint_white.jpg);
+            }
+            .buttonColorWhite:active
+            {
+              top: 0.1%;
+              left:0.1%; 
+            }
+
+            .buttonColorRed
+            {
+              position:relative;
+              background-image:url(images/carpaint_red.jpg);
+              border:none;
+              width:107px;
+              height:105px;
+              color:grey;
+            }
+            .buttonColorRed:hover
+            {
+              background-image:url(images/carpaint_red.jpg);
+            }
+            .buttonColorRed:active
+            {
+              top: 0.1%;
+              left:0.1%; 
+            }     
+
+
+            .buttonColorBlack
+            {
+              position:relative;
+              background-image:url(images/carpaint_black.jpg);
+              border:none;
+              width:107px;
+              height:105px;
+              color:grey;
+            }
+            .buttonColorBlack:hover
+            {
+              background-image:url(images/carpaint_black.jpg);
+            }
+            .buttonColorBlack:active
+            {
+              top: 0.1%;
+              left:0.1%; 
+            }          
+
+
+            .buttonColorBar
+            {
+              padding:0%;
+              margin:0.0%;
+            }            
         </style>    
     </head>
 
     <body>
+
         <div id="container"></div>
+        
         <div id="info">
             <span id="result"></span>
         </div> 
+        <div class="buttonEnvBar">
+            <button type="image" class="buttonEnvWhite" onClick="clickhome(this)"></button>
+            <button type="image" class="buttonEnvWarehouse" onClick="clickexit(this)"></button>
+            <button type="image" class="buttonEnvDealership" onClick="clickexit(this)"></button>
+        </div>  
+
+        <div class="ButtonColorBar">
+            <button type="image" class="buttonColorWhite" onClick="clickhome(this)">White</button>
+            <button type="image" class="buttonColorRed" onClick="clickexit(this)">Red</button>
+            <button type="image" class="buttonColorBlack" onClick="clickexit(this)">Black</button>
+            <button type="image" class="buttonColorWhite" onClick="clickhome(this)">White</button>
+            <button type="image" class="buttonColorRed" onClick="clickexit(this)">Red</button>
+            <button type="image" class="buttonColorBlack" onClick="clickexit(this)">Black</button>
+        </div>  
+
         <script src="virtualjoystick.js"></script>
         <script src="javascripts.js"></script>
         <script>
@@ -54,7 +200,7 @@
 
             setInterval(function(){
                 JoystickEvent(joystick.deltaX(), joystick.deltaY());
-            }, 1000);
+            }, 20);
         </script>
     </body>
 </html>
